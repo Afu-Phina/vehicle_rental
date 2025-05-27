@@ -29,14 +29,6 @@ In order to run this project you need:
 - Visual Studio Code
 - Live server Extension
 
-### Setup
-
-Clone this repository to your desired folder:
-
-sh
-  cd my-folder
-  git clone https://github.com/ngalamac/Hello-Codegisoft Academy.git
-
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
