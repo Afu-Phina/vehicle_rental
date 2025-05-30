@@ -1,0 +1,101 @@
+<svg width="900" height="700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Person (Base Class) -->
+  <rect x="350" y="50" width="200" height="120" fill="#e8f4fd" stroke="#2563eb" stroke-width="2"/>
+  <text x="450" y="75" text-anchor="middle" font-weight="bold" font-size="14">Person</text>
+  <line x1="350" y1="85" x2="550" y2="85" stroke="#2563eb" stroke-width="1"/>
+  <text x="360" y="105" font-size="12">- personId: String</text>
+  <text x="360" y="120" font-size="12">- name: String</text>
+  <text x="360" y="135" font-size="12">- email: String</text>
+  <text x="360" y="150" font-size="12">- phone: String</text>
+  <line x1="350" y1="160" x2="550" y2="160" stroke="#2563eb" stroke-width="1"/>
+  
+  <!-- Admin -->
+  <rect x="50" y="250" width="180" height="100" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="140" y="275" text-anchor="middle" font-weight="bold" font-size="14">Admin</text>
+  <line x1="50" y1="285" x2="230" y2="285" stroke="#f59e0b" stroke-width="1"/>
+  <text x="60" y="305" font-size="12">- adminLevel: String</text>
+  <line x1="50" y1="315" x2="230" y2="315" stroke="#f59e0b" stroke-width="1"/>
+  <text x="60" y="335" font-size="12">+ manageSystem()</text>
+  
+  <!-- Customer -->
+  <rect x="260" y="250" width="180" height="120" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="350" y="275" text-anchor="middle" font-weight="bold" font-size="14">Customer</text>
+  <line x1="260" y1="285" x2="440" y2="285" stroke="#f59e0b" stroke-width="1"/>
+  <text x="270" y="305" font-size="12">- licenseNumber: String</text>
+  <text x="270" y="320" font-size="12">- creditCard: String</text>
+  <line x1="260" y1="330" x2="440" y2="330" stroke="#f59e0b" stroke-width="1"/>
+  <text x="270" y="350" font-size="12">+ rentCar()</text>
+  <text x="270" y="365" font-size="12">+ returnCar()</text>
+  
+  <!-- Rental Agent -->
+  <rect x="470" y="250" width="180" height="100" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="560" y="275" text-anchor="middle" font-weight="bold" font-size="14">Rental Agent</text>
+  <line x1="470" y1="285" x2="650" y2="285" stroke="#f59e0b" stroke-width="1"/>
+  <text x="480" y="305" font-size="12">- employeeId: String</text>
+  <line x1="470" y1="315" x2="650" y2="315" stroke="#f59e0b" stroke-width="1"/>
+  <text x="480" y="335" font-size="12">+ processRental()</text>
+  
+  <!-- Car Owner -->
+  <rect x="680" y="250" width="180" height="120" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="770" y="275" text-anchor="middle" font-weight="bold" font-size="14">Car Owner</text>
+  <line x1="680" y1="285" x2="860" y2="285" stroke="#16a34a" stroke-width="1"/>
+  <text x="690" y="305" font-size="12">- ownerId: String</text>
+  <text x="690" y="320" font-size="12">- bankAccount: String</text>
+  <line x1="680" y1="330" x2="860" y2="330" stroke="#16a34a" stroke-width="1"/>
+  <text x="690" y="350" font-size="12">+ addCar()</text>
+  <text x="690" y="365" font-size="12">+ removeCar()</text>
+  
+  <!-- Car -->
+  <rect x="350" y="450" width="200" height="140" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2"/>
+  <text x="450" y="475" text-anchor="middle" font-weight="bold" font-size="14">Car</text>
+  <line x1="350" y1="485" x2="550" y2="485" stroke="#7c3aed" stroke-width="1"/>
+  <text x="360" y="505" font-size="12">- carId: String</text>
+  <text x="360" y="520" font-size="12">- make: String</text>
+  <text x="360" y="535" font-size="12">- model: String</text>
+  <text x="360" y="550" font-size="12">- year: int</text>
+  <text x="360" y="565" font-size="12">- available: boolean</text>
+  <line x1="350" y1="575" x2="550" y2="575" stroke="#7c3aed" stroke-width="1"/>
+  
+  <!-- Inheritance arrows (Person to subclasses) -->
+  <!-- Admin inheritance -->
+  <line x1="380" y1="170" x2="140" y2="250" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Customer inheritance -->
+  <line x1="430" y1="170" x2="350" y2="250" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Rental Agent inheritance -->
+  <line x1="480" y1="170" x2="560" y2="250" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Association lines -->
+  <!-- Customer to Car (rental relationship) -->
+  <line x1="350" y1="370" x2="450" y2="450" stroke="#000" stroke-width="1"/>
+  <text x="380" y="410" font-size="10">rents</text>
+  <text x="320" y="390" font-size="10">1..*</text>
+  <text x="460" y="440" font-size="10">1..*</text>
+  
+  <!-- Car Owner to Car (ownership relationship) -->
+  <line x1="680" y1="350" x2="550" y2="450" stroke="#000" stroke-width="1"/>
+  <text x="600" y="400" font-size="10">owns</text>
+  <text x="650" y="370" font-size="10">1</text>
+  <text x="560" y="440" font-size="10">1..*</text>
+  
+  <!-- Rental Agent to Car (manages relationship) -->
+  <line x1="560" y1="350" x2="480" y2="450" stroke="#000" stroke-width="1"/>
+  <text x="510" y="400" font-size="10">manages</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+     refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000" />
+    </marker>
+  </defs>
+  
+  <!-- Legend -->
+  <rect x="20" y="600" width="200" height="80" fill="#f9fafb" stroke="#d1d5db" stroke-width="1"/>
+  <text x="30" y="620" font-weight="bold" font-size="12">Legend:</text>
+  <line x1="30" y1="635" x2="60" y2="635" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="70" y="640" font-size="10">Inheritance</text>
+  <line x1="30" y1="655" x2="60" y2="655" stroke="#000" stroke-width="1"/>
+  <text x="70" y="660" font-size="10">Association</text>
+</svg>
